@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html layout:decorate="/template.html" >
+<head>
+<meta charset="UTF-8">
+<title>Student New</title>
+</head>
+<body layout:fragment="body">
+	<h1>New student</h1>
+
+	<form th:action="@{/student/new}" method="post">
+		<div>
+			<input type="text" name="studentCode" placeholder="Enter studentCode...">
+		</div>
+		<div>
+			<button type="submit">Create</button>
+		</div>
+	</form>	<!-- 
+	<form th:action="@{/user/upload-multi}" method="post" 
+		enctype="multipart/form-data">
+		<input type="file" name="files" accept="image/*">
+		<input type="file" name="files" accept="image/*">
+		<input type="file" name="files" accept="image/*">
+		<div>
+			<button type="submit">Create</button>
+		</div>
+	</form> -->
+</body>
+</html>

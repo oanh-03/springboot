@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html layout:decorate="/template.html" >
+<head>
+<meta charset="UTF-8">
+<title>user New</title>
+</head>
+<body layout:fragment="body">
+	<h1>New user role</h1>
+
+	<form th:action="@{/user-role/new}" method="post">
+		<div>
+			<input type="text" name="userId" placeholder="Enter user id...">
+		</div>
+		<div>
+			<input type="radio" name="role" value="ROLE_ADMIN"> 
+				ROLE_ADMIN
+		</div>
+		<div>
+			<input type="radio" name="role" value="ROLE_STUDENT">
+				ROLE_STUDENT
+		</div>
+		<div>
+			<button type="submit">Create</button>
+		</div>
+	</form>	<!-- 
+	<form th:action="@{/user/upload-multi}" method="post" 
+		enctype="multipart/form-data">
+		<input type="file" name="files" accept="image/*">
+		<input type="file" name="files" accept="image/*">
+		<input type="file" name="files" accept="image/*">
+		<div>
+			<button type="submit">Create</button>
+		</div>
+	</form> -->
+</body>
+</html>

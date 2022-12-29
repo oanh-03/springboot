@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>Department Edit</title>
+</head>
+<body layout:fragment="body">
+	<h1>Edit Course</h1>
+
+	<form th:action="@{/course/edit}" method="post">
+		<div>
+			<input type="text" name="id" th:value="${course.id}">
+		</div>
+		<div>
+			<input type="text" name="userId" th:value="${course.userId}" placeholder="Enter user id...">
+		</div>
+		<div>
+			<button type="submit">Update</button>
+		</div>
+	</form>
+</body>
+</html>

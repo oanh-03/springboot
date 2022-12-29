@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>Department Edit</title>
+</head>
+<body layout:fragment="body">
+	<h1>Edit Student</h1>
+
+	<form th:action="@{/student/edit}" method="post">
+		<div>
+			<input type="text" name="studentCode" th:value="${student.studentCode}">
+		</div>
+		<div>
+			<button type="submit">Update</button>
+		</div>
+	</form>
+</body>
+</html>

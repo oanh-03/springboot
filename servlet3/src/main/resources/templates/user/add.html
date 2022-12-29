@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>user New</title>
+</head>
+<body layout:fragment="body">
+	<h1>New user</h1>
+
+	<form th:action="@{/user/new}" method="post" 
+		enctype="multipart/form-data">
+		<div>
+			<input type="text" name="name" placeholder="Enter name...">
+		</div>
+		<div>
+			<input type="text" name="username" placeholder="Enter username...">
+		</div>
+		<div>
+			<input type="text" name="password" placeholder="Enter password...">
+		</div>
+		<div>
+			<input type="text" name="birthdate" placeholder="dd/MM/yyyy">
+		</div>
+		<div>
+			<input type="file" name="file" accept="image/*">
+		</div>
+		<div>
+			<input type="checkbox" name="userRoles[0].role" value="ROLE_ADMIN"> 
+				ROLE_ADMIN
+		</div>
+		<div>
+			<input type="checkbox" name="userRoles[1].role" value="ROLE_STUDENT">
+				ROLE_STUDENT
+		</div>
+		<div>
+			<button type="submit">Create</button>
+		</div>
+	</form>
+	
+	<!-- 
+	<form th:action="@{/user/upload-multi}" method="post" 
+		enctype="multipart/form-data">
+		<input type="file" name="files" accept="image/*">
+		<input type="file" name="files" accept="image/*">
+		<input type="file" name="files" accept="image/*">
+		<div>
+			<button type="submit">Create</button>
+		</div>
+	</form> -->
+</body>
+</html>

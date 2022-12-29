@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student List</title>
+</head>
+
+<body layout:fragment="body">
+
+	<h1>Student List</h1>
+	<a th:href="@{/student/new}">Add new</a>
+
+	<form th:action="@{/student/search}" method="get">
+		<input type="text" name="studentCode" placeholder="Enter studentCode" th:value="${studentCode}">
+		<input type="text" name="userId" placeholder="Enter userId" th:value="${userId}">
+
+		<select name="size">
+			<option th:selected="${size == 5}" value="5">5</option>
+			<option th:selected="${size == 10}" value="10">10</option>
+		</select>
+
+		<button type="submit">Search</button>
+	</form>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>StudentCode</th>
+				<th>User</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="d : ${studentList}">
+				<td th:text="${d.id}"></td>
+				<td th:text="${d.studentCode}"></td>
+				<td th:text="${d.userName}"></td>
+				<td>
+					<a th:href="@{'/student/get/' + ${d.id}}">View</a>
+					<a th:href="@{'/student/edit?id=' + ${d.id}}">Edit</a>
+					<a th:href="@{'/student/delete-code?studentCode=' + ${d.studentCode}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4">
+					Tổng <span th:text="${count}"></span> bản ghi trong <span th:text="${totalPage}"></span> trang 
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+
+</html>
