@@ -1,0 +1,6 @@
+<form th:action="@{/person/edit}" method="post">
+	<input name="id" th:value="${person.id}" placeholder="Enter id..."> 
+	<input name="name" th:value="${person.name}" placeholder="Enter name..."> 
+	<input name="age" th:value="${person.age}" placeholder="Enter age..."> 	
+	<button type="submit">Save</button>
+</form>

@@ -1,0 +1,24 @@
+<form th:action="@{/person/search}" method="get">
+	
+	<input name="min">
+	<input name="max">
+	<input name="page">
+	<input name="size" value="10">
+	<button type="submit"> Search</button>
+</form>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Age</th>
+	</tr>
+	<tr th:each="p : ${list}">
+		<td>Id <span th:text="${p.id}"> </span></td>
+		<td th:text="${p.name}">Name</td>
+		<td th:text="${p.age}">Age</td>
+		<td>
+			<a th:href="@{'/person/delete?id=' + ${p.id}}">Delete</a>
+			<a th:href="@{'/person/edit/' + ${p.id}}">Edit</a>
+		</td>
+		
+</table>
